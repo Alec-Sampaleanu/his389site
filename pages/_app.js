@@ -1,15 +1,10 @@
 import Head from 'next/head';
-import Nav from "../components/nav";
-import 'bootstrap/dist/css/bootstrap.css';
-import {useEffect} from "react";
+import MyNavbar from "../components/navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from "../components/layout";
 
 
 function MyApp({Component, pageProps}) {
-    useEffect(() => {
-        import("bootstrap/dist/js/bootstrap");
-    }, []);
-
     return (
         <>
             <Head>
@@ -19,7 +14,7 @@ function MyApp({Component, pageProps}) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
             <div className="container">
-                <Nav/>
+                <MyNavbar/>
                 <main>
                     <Layout>
                         <Component {...pageProps} />
