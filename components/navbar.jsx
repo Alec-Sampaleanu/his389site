@@ -21,6 +21,18 @@ export default function MyNavbar() {
                         <NavDropdown.Item>
                             <Link href="/committees/women">Women in Latin America</Link>
                         </NavDropdown.Item>
+                        <NavDropdown.Item>
+                            <Link href="/committees/us-influence">US Influence</Link>
+                        </NavDropdown.Item>
+                        <NavDropdown.Item>
+                            <Link href="/committees/lgbtq">LGBTQ+ Activism</Link>
+                        </NavDropdown.Item>
+                        <NavDropdown.Item>
+                            <Link href="/committees/street-protests">Street Protests</Link>
+                        </NavDropdown.Item>
+                        <NavDropdown.Item>
+                            <Link href="/committees/race">Race in Latin America</Link>
+                        </NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
             </Navbar.Collapse>
