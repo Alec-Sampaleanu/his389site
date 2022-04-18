@@ -1,4 +1,4 @@
-import {getAllArticleIds, getArticleDataByID} from '../../lib/articles'
+import {getAllArticleIDs, getArticleDataByID} from '../../lib/articles'
 import {getMDXComponent} from "mdx-bundler/client";
 import {useMemo} from "react";
 
@@ -12,7 +12,7 @@ export async function getStaticProps({params}) {
 }
 
 export async function getStaticPaths() {
-    const paths = getAllArticleIds()
+    const paths = getAllArticleIDs()
     return {
         paths,
         fallback: false
