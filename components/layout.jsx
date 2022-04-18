@@ -20,6 +20,10 @@ function Layout(props) {
               p {
                 margin-bottom: 10px;
               }
+              
+              .page-layout {
+                padding-top: 50px;
+              }
             `}</style>
         </div>
     )

@@ -1,6 +1,7 @@
 import {getArticleDataByCommittee} from "../../lib/articles";
 import ArticleBrowser from "../../components/articlebrowser";
 import {Col, Container, Row} from "react-bootstrap";
+import Layout from "../../components/layout";
 
 export async function getStaticProps() {
     const articleData = await getArticleDataByCommittee("Street Protests");
@@ -14,7 +15,7 @@ export async function getStaticProps() {
 
 export default function StreetProtests({articleData}) {
     return (
-        <div>
+        <Layout>
             <Container className="px-4 px-lg-5 h-100">
                 <Row className="gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <Col className="align-self-end">
@@ -23,6 +24,6 @@ export default function StreetProtests({articleData}) {
                     <ArticleBrowser articleData={articleData}/>
                 </Row>
             </Container>
-        </div>
+        </Layout>
     )
 }
