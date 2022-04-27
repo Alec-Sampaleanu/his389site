@@ -1,8 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project, which relies on [MDX](https://mdxjs.com/) to allow for entirely statically generated dynamic articles presenting various information regarding the criminalization of protest in Latin America, built for the UofT course HIS389. MDX allows for JSX to be inserted into markdown, while still preserving the ease of use and simplicity of normal markdown. This means that anybody can quickly add an article by formatting it into a .mdx file, and they also have the flexibility to include premade React components, such as timelines, image wheels, etc., if desired. 
 
 ## Getting Started
 
-First, run the development server:
+Clone this repository to your local device, then run the development server:
 
 ```bash
 npm run dev
@@ -12,23 +12,24 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The homepage can be found at `pages/index.js`. Pages auto-update as you edit their files while the development server is running.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Articles
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Articles, which are stored as .mdx files in the `articles` file directory, are dynamically routed. This means that when, for example, you go to the Women's committee homepage, the application searches through all articles for those which have the `committee: Women` frontmatter, and displays them in a column. Upon clicking an article, the application then finds the .mdx file associated with that article, transforms it into JSX, and uses it to saturate `pages/[id].jsx`, which is then routed by `site-name.com/<committee>/<article-id>`.
 
-## Learn More
+To add a new article, simply create a markdown file, but save it as .mdx instead of .md, and save it to the articles folder. Ensure that the article frontmatter includes the title, author, committee, and tags for the article.
 
-To learn more about Next.js, take a look at the following resources:
+## Bootstrap + Styling
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For styling, I relied on Bootsrap, mainly for the navbar, and styled-jsx. However, any other solutions should also work, keeping in mind that this is a Next.js application and so some styling libraries or frameworks may not play nicely without additional troublefixing.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+For my proof of concept, I chose to deploy on the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+However, for real life deployment, there are most likely cheaper solutions if significant traffic is expected. [Here](https://nextjs.org/docs/deployment) is a guide to deployment of Next.js applications, outlining some possible solutions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Extension
+
+Obviously this is a very bare-bones prototype, and a final product will require significant iteration from here forwards. Feel free to fork this repository for any future changes you wish to make, and do not hesitate to contact me if any questions come up.
